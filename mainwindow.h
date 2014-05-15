@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 class QAction;
+class QLabel;
 
 class MainWindow : public QMainWindow
 {
@@ -17,6 +18,7 @@ public:
 
 private:
     QAction *openAction;
+    QLabel *msgLabel;
 };
 
 #endif // MAINWINDOW_H
