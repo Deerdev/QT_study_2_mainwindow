@@ -1,1 +1,1 @@
-创建mainwindow，有菜单栏 工作栏 状态栏
+创建mainwindow，有菜单栏 工作栏 状态栏   
