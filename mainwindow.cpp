@@ -66,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+//打开函数
 void MainWindow::open()
 {
     QString path = QFileDialog::getOpenFileName(this, tr("Open Image"), ".", tr("Image File(*.jpg *.png)"));    //获取打开的文件名(包括路径)
@@ -78,6 +79,22 @@ void MainWindow::open()
     {
         QMessageBox::information(NULL, tr("Path"), tr("You selected ") + path);
     }
+    /*另一种写法
+    QFileDialog *fileDialog = new QFileDialog(this);
+    fileDialog->setWindowTitle(tr("Open Image"));
+    fileDialog->setDirectory(".");                                  //“.”代表程序运行的目录，“/”代表当前盘符的根目录
+    fileDialog->setFilter(tr("Image Files(*.jpg *.png)"));          //过滤器，过滤后缀文件，多个文件“；”分开，“JPEG Files(*.jpg);;PNG Files(*.png)”
+    if(fileDialog->exec() == QDialog::Accepted)
+    {
+        QString path = fileDialog->selectedFiles()[0];              //多选文件，[0]选第一个参数????
+        QMessageBox::information(NULL, tr("Path"), tr("You selected ") + path);
+    }
+    else {
+        QMessageBox::information(NULL, tr("Path"), tr("You didn't select any files."));
+    }
+    *选择多个文件 函数：getOpenFileNames(),返回QStringList,存放QString的List，也就是STL中的list<string>
+    */
+
 }
 
 MainWindow::~MainWindow()
